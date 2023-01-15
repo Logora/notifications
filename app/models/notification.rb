@@ -4,7 +4,7 @@ module Notifications
   
     after_commit :publish_create_event, :on => :create
     after_commit :publish_save_event, :on => :update
-    
+
     scope :unread, -> { where(is_opened: false).order(created_at: :desc) }
   
     belongs_to :actor, class_name: Notifications.config.user_class, optional: true
@@ -42,5 +42,5 @@ module Notifications
       event_name = "notification_saved".to_sym
       broadcast(event_name, self.id)
     end
-  end  
+  end
 end
