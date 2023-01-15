@@ -1,5 +1,8 @@
 module Notifications
-  class ApplicationController
+  class ApplicationController < ::ApplicationController
+    include Pagy::Backend
+    after_action { pagy_headers_merge(@pagy) if @pagy }
+
     helper_method :current_user
 
     alias_method :origin_current_user, Notifications.config.current_user_method.to_sym
