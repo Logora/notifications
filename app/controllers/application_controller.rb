@@ -1,5 +1,5 @@
 module Notifications
-  class ApplicationController < ::ApplicationController
+  class ApplicationController
     helper_method :current_user
 
     alias_method :origin_current_user, Notifications.config.current_user_method.to_sym
