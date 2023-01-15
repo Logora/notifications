@@ -4,10 +4,6 @@ Mountable notifications for any Rails applications.
 
 [![Gem Version](https://badge.fury.io/rb/notifications.svg)](https://badge.fury.io/rb/notifications) [![Build Status](https://travis-ci.org/rails-engine/notifications.svg)](https://travis-ci.org/rails-engine/notifications) [![codecov.io](https://codecov.io/github/rails-engine/notifications/coverage.svg?branch=master)](https://codecov.io/github/rails-engine/notifications?branch=master)
 
-## Example:
-
-<img width="800" alt="2016-03-29 10 48 16" src="https://cloud.githubusercontent.com/assets/5518/16578955/eb59e472-42cf-11e6-825e-8fc9ecf58a8b.png">
-
 ## Installation
 
 ```bash
@@ -18,13 +14,6 @@ You now have a notifications generator in your Rails application:
 
 ```bash
 $ rails g notifications:install
-```
-
-You can generate views, controllers if you need to customize them:
-
-```bash
-$ rails g notifications:views
-$ rails g notifications:controllers
 ```
 
 ## Usage
@@ -73,15 +62,6 @@ Notifications.config.user_class = 'Member'
 Notifications.configure do
   # Class name of you User model, default: 'User'
   self.user_class = 'User'
-
-  # Method of user name in User model, default: 'name'
-  # self.user_name_method = 'name'
-
-  # Method of user avatar in User model, default: nil
-  # self.user_avatar_url_method = nil
-
-  # Method name of user profile page path, in User model, default: nil
-  # self.user_profile_url_method = 'profile_url'
 
   # authenticate_user method in your Controller, default: nil
   # If you use Devise, authenticate_user! is correct

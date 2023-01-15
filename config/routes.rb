@@ -1,8 +1,5 @@
 Notifications::Engine.routes.draw do
-  resources :notifications, path: "" do
-    collection do
-      delete :clean
-      post :read
-    end
-  end
+  get 'notifications', to: "notifications#index", as: :user_notifications
+  post 'notifications/read/all', to: "notifications#read_all", as: :notifications_read_all
+  post 'notifications/read/:id', to: "notifications#read", as: :notification_read
 end

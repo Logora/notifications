@@ -15,16 +15,6 @@ module Notifications
         end
       end
 
-      def add_models
-        path = "#{Rails.root}/app/models/notification.rb"
-        if File.exist?(path)
-          puts "Skipping notification.rb creation, as file already exists!"
-        else
-          puts "Adding model (notification.rb)..."
-          template "app/models/notification.rb", path
-        end
-      end
-
       def add_routes
         route 'mount Notifications::Engine => "/notifications"'
       end
