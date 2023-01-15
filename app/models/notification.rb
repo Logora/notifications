@@ -2,6 +2,9 @@ module Notifications
   class Notification < ApplicationRecord
     include Wisper::Publisher
   
+    after_commit :publish_create_event, :on => :create
+    after_commit :publish_save_event, :on => :update
+    
     scope :unread, -> { where(is_opened: false).order(created_at: :desc) }
   
     belongs_to :actor, class_name: Notifications.config.user_class, optional: true
@@ -12,11 +15,6 @@ module Notifications
   
     validates_presence_of :user
     validates_presence_of :notify_type
-  
-    included do
-      after_commit :publish_create_event, :on => :create
-      after_commit :publish_save_event, :on => :update
-    end
 
     def read
       unless self.is_opened
