@@ -1,4 +1,4 @@
-module Api::V1
+module Notifications
   class NotificationsController < ApplicationController
     # GET /notifications
     def index
