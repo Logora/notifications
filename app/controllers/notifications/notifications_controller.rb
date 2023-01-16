@@ -2,7 +2,7 @@ module Notifications
   class NotificationsController < ApplicationController
     # GET /notifications
     def index
-      notifications = Notification.includes(:actor, :target, :second_target).where(user_id: current_user.id, is_grouped: false, is_desktop: true)
+      notifications = Notification.includes(:actor, :target, :second_target).where(user_id: current_user.id, is_desktop: true)
       @pagy, notifications_paginated = pagy(notifications)
       render json: { success: true, data: Plucker::Collection.new(notifications_paginated, serializer: NotificationSerializer) }
     end
