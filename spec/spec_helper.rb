@@ -12,7 +12,8 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 #
-# See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+# See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
 require 'wisper/rspec/matchers'
 
 RSpec.configure do |config|
@@ -39,12 +40,6 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  # Run specs in random order to surface order dependencies. If you find an
-  # order dependency and want to debug it, you can fix the order by providing
-  # the seed, which is printed after each run.
-  #     --seed 1234
-  config.order = :random
-
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will
   # have no way to turn it off -- the option exists only for backwards
   # compatibility in RSpec 3). It causes shared context metadata to be
@@ -64,6 +59,12 @@ RSpec.configure do |config|
     end
   end
 
+  # Run specs in random order to surface order dependencies. If you find an
+  # order dependency and want to debug it, you can fix the order by providing
+  # the seed, which is printed after each run.
+  #     --seed 1234
+  config.order = :random
+
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin
@@ -81,14 +82,8 @@ RSpec.configure do |config|
 
   # Limits the available syntax to the non-monkey patched syntax that is
   # recommended. For more details, see:
-  #   - http://rspec.info/blog/2012/06/rspecs-new-expectation-syntax/
-  #   - http://www.teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/
-  #   - http://rspec.info/blog/2014/05/notable-changes-in-rspec-3/#zero-monkey-patching-mode
+  # https://relishapp.com/rspec/rspec-core/docs/configuration/zero-monkey-patching-mode
   config.disable_monkey_patching!
-
-  # This setting enables warnings. It's recommended, but in some cases may
-  # be too noisy due to issues in dependencies.
-  config.warnings = true
 
   # Many RSpec users commonly either run the entire suite or an individual
   # file, and it's useful to allow more verbose output when running an
