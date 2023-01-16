@@ -18,12 +18,6 @@ module Notifications
       def add_routes
         route 'mount Notifications::Engine => "/notifications"'
       end
-
-      '''
-      def add_migrations
-        exec("rake notifications:install:migrations")
-      end
-      '''
     end
   end
 end
