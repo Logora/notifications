@@ -8,16 +8,7 @@ gem 'pg', '~> 1.4.5'
 gem 'pagy', '~> 4.11.0'
 gem 'plucker_serializer', '~> 0.5.0'
 gem 'wisper', '~> 2.0.1'
-
-group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'unicode', platforms: [:ruby]
-  gem 'rspec-rails'
-  gem 'rswag-specs'
-  gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'turbo_tests'
-end
+gem 'devise'
 
 group :test do
   gem 'shoulda-matchers'
@@ -26,4 +17,10 @@ group :test do
   gem 'wisper-rspec'
   gem 'wisper-testing'
   gem 'simplecov'
+  gem 'minitest'
+  gem 'simplecov'
+  gem 'codecov'
+  gem 'rspec-rails'
+  gem 'factory_bot'
+  gem 'faker'
 end

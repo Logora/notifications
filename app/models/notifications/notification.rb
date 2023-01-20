@@ -1,5 +1,7 @@
 module Notifications
   class Notification < ApplicationRecord
+    self.table_name = "notifications"
+
     include Wisper::Publisher
   
     after_commit :publish_create_event, :on => :create
